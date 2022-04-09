@@ -25,10 +25,10 @@ module.exports = {
         if (!validUrl.isUri(url)) return interaction.reply({ content: "Please provide a valid URL.", ephemeral: true });
 
         /* Get DB */
-        let UptimeDB = await client.data.getUptime(interaction.user.id, url);
+        let MonitorDB = await client.data.getMonitor(interaction.user.id, url);
 
         /* Check DB */
-        if (!UptimeDB) {
+        if (!MonitorDB) {
 
             interaction.reply({
                 content: `You don't have any monitor for ${url} !`,
